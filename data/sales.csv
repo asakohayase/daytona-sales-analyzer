@@ -1,0 +1,31 @@
+date,product,category,region,revenue,units_sold,gender,age_group
+2025-01-15,Premium Hoodie,Casual Wear,North,89.99,2,Male,25-34
+2025-01-16,Business Blazer,Formal Wear,South,189.99,3,Female,35-44
+2025-01-17,Denim Jeans,Casual Wear,East,79.99,4,Male,18-24
+2025-01-18,Summer Dress,Casual Wear,West,65.99,6,Female,25-34
+2025-01-19,Athletic T-Shirt,Sportswear,North,24.99,8,Male,18-24
+2025-01-20,Wool Coat,Outerwear,South,299.99,1,Female,45-54
+2025-01-21,Running Shorts,Sportswear,East,34.99,12,Male,25-34
+2025-01-22,Leather Jacket,Outerwear,West,449.99,1,Male,35-44
+2025-01-23,Yoga Pants,Sportswear,North,59.99,2,Female,25-34
+2025-01-24,Business Blazer,Formal Wear,South,189.99,2,Female,35-44
+2025-01-25,Premium Hoodie,Casual Wear,East,89.99,1,Male,25-34
+2025-01-26,Maxi Dress,Casual Wear,West,119.99,2,Female,25-34
+2025-01-27,Summer Dress,Casual Wear,North,65.99,4,Female,18-24
+2025-01-28,Athletic T-Shirt,Sportswear,South,24.99,6,Male,18-24
+2025-01-29,Business Blazer,Formal Wear,East,189.99,3,Female,35-44
+2025-01-30,Running Shorts,Sportswear,West,34.99,10,Male,25-34
+2025-02-01,Premium Hoodie,Casual Wear,North,89.99,3,Male,25-34
+2025-02-02,Leather Jacket,Outerwear,South,449.99,2,Male,35-44
+2025-02-03,Denim Jeans,Casual Wear,East,79.99,5,Male,18-24
+2025-02-04,Wool Coat,Outerwear,West,299.99,1,Female,45-54
+2025-02-05,Yoga Pants,Sportswear,North,59.99,3,Female,25-34
+2025-02-06,Summer Dress,Casual Wear,South,65.99,8,Female,18-24
+2025-02-07,Premium Hoodie,Casual Wear,East,89.99,2,Male,25-34
+2025-02-08,Business Blazer,Formal Wear,West,189.99,4,Female,35-44
+2025-02-09,Maxi Dress,Casual Wear,North,119.99,3,Female,25-34
+2025-02-10,Athletic T-Shirt,Sportswear,South,24.99,12,Male,18-24
+2025-02-11,Leather Jacket,Outerwear,East,449.99,1,Male,35-44
+2025-02-12,Running Shorts,Sportswear,West,34.99,15,Male,25-34
+2025-02-13,Wool Coat,Outerwear,North,299.99,2,Female,45-54
+2025-02-14,Yoga Pants,Sportswear,South,59.99,4,Female,25-34
