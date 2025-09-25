@@ -42,7 +42,7 @@ export default function Home() {
           </h1>
 
           <div className="space-y-6">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 items-end">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 items-start">
               <div className="sm:col-span-2">
                 <label htmlFor="prompt" className="block text-sm font-medium text-gray-700 mb-2">
                   Enter your sales query
@@ -50,7 +50,7 @@ export default function Home() {
                 <textarea
                   id="prompt"
                   rows={4}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#08AE78]  focus:border-[#08AE78]  resize-none text-gray-900 placeholder-gray-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#08AE78]  focus:border-[#08AE78]  resize-none text-gray-900 placeholder-gray-500"
                   placeholder="Enter your sales query..."
                   value={prompt}
                   onChange={(e) => setPrompt(e.target.value)}
