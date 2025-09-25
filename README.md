@@ -63,9 +63,21 @@ OPENAI_API_KEY=your-openai-key
 ```
 
 4. (Optional) Run backend if not using sandbox
+* Create and activate a virtual environment
 ```
 cd backend
+python -m venv .venv          # create venv (if not created)
+source .venv/bin/activate     # Linux/macOS
+# .venv\Scripts\activate      # Windows
+```
+
+* Install dependencies
+```
 pip install -r requirements.txt
+```
+
+* Start the backend
+```
 uvicorn main:app --reload --port 8000
 ```
 
