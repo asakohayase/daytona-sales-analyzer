@@ -19,17 +19,33 @@ export async function POST(req: NextRequest) {
 
     const openai = new OpenAI({ apiKey: openaiApiKey });
 
-    const gptResponse = await openai.chat.completions.create({
-      model: "gpt-4",
-      messages: [
-        {
-          role: "system",
-          content:
-            "You generate Python code for sales data analysis using pandas, numpy, and matplotlib/seaborn. The CSV filename to read is 'sales.csv' (already present). For counting total sales per product, use the 'units_sold' column instead of just counting rows. Always include print() statements for final results. Return only raw Python code, no markdown.",
-        },
-        { role: "user", content: prompt },
-      ],
-    });
+    const promptTemplate = `
+    You are a Python expert generating code.
+    
+   Requirements:
+  - Generate only plain Python code (no markdown, no explanations, no extra text)
+  - Use pandas (and optionally numpy, matplotlib, seaborn)
+  - Read CSV file named 'sales.csv' (already uploaded in sandbox)
+  - Automatically detect relevant columns by inspecting the CSV header
+  - The CSV 'sales.csv' has a 'date' column in ISO format (YYYY-MM-DD)
+  - Parse the 'date' column as datetime objects
+  - When filtering by year or month, use .dt.year and .dt.month properties
+  - Calculate total revenue per product category as the sum of (units_sold * unit_price)
+  - When counting total products sold, always sum the 'units_sold' column, do NOT just count rows
+  - Print all final results using print()
+  - Do NOT use exec(), eval(), base64 decoding, or any dynamic code execution
+  - Only return the Python code
+    
+    User request: ${prompt}
+    `;
+    
+        const gptResponse = await openai.chat.completions.create({
+          model: "gpt-4",
+          messages: [
+            { role: "system", content: "You are a Python expert generating code." },
+            { role: "user", content: promptTemplate },
+          ],
+        });
 
     let pythonCode = gptResponse.choices[0].message?.content || "";
     pythonCode = pythonCode.replace(/```python\n?/g, "").replace(/```/g, "").trim();

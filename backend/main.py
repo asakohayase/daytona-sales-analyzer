@@ -36,7 +36,6 @@ def clean_generated_code(code: str) -> str:
         stripped = line.strip()
         if not stripped:
             continue
-        # Keep comments or code lines
         if stripped.startswith("#") or any(stripped.startswith(k) for k in (
             "import", "from", "def", "class", "for", "if", "while", "with", "return", "print"
         )) or "=" in stripped:
@@ -59,18 +58,35 @@ async def run_query(req: QueryRequest):
         os.environ["OPENAI_API_KEY"] = api_key
         client = OpenAI()
 
-        system_prompt = (
-            "You generate Python code for sales data analysis using pandas, numpy, and matplotlib/seaborn. "
-            "The CSV filename to read is 'sales.csv'. Always include print() statements for final results. "
-            "For counting total sales per product, use the 'units_sold' column instead of just counting rows. "
-            "Return only raw Python code, no markdown."
-        )
+        # System message: assistant persona
+        system_message = "You are a Python expert generating code."
+
+        # User message: detailed instructions + actual user request
+        user_message = f"""
+You are a Python expert generating code.
+
+Requirements:
+- Generate only plain Python code (no markdown, no explanations, no extra text)
+- Use pandas (and optionally numpy, matplotlib, seaborn)
+- Read CSV file named 'sales.csv'
+- Automatically detect relevant columns by inspecting the CSV header
+- The CSV 'sales.csv' has a 'date' column in ISO format (YYYY-MM-DD)
+- Parse the 'date' column as datetime objects
+- When filtering by year or month, use .dt.year and .dt.month properties
+- Calculate total revenue per product category as the sum of (units_sold * unit_price)
+- When counting total products sold, always sum the 'units_sold' column, do NOT just count rows
+- Print all final results using print()
+- Do NOT use exec(), eval(), base64 decoding, or any dynamic code execution
+- Only return the Python code
+
+User request: {req.prompt}
+"""
 
         resp = client.chat.completions.create(
             model="gpt-4",
             messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": req.prompt}
+                {"role": "system", "content": system_message},
+                {"role": "user", "content": user_message}
             ]
         )
 
@@ -96,7 +112,8 @@ async def run_query(req: QueryRequest):
 
         out = p.stdout.strip()
         err = p.stderr.strip()
-        return {"result": out or err or "No output", "code": code, "exitCode": p.returncode}
+        result_text = out or err or "No output"
+        return {"result": result_text, "code": code, "exitCode": p.returncode}
 
     except Exception as e:
         print("Backend error:", e)
