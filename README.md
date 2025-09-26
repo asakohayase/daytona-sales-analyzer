@@ -53,19 +53,26 @@ With **Backend**, these could expose secrets or damage the system.
 
 ## 4. Quick Start
 
-1. Clone repo
+1. Pre-requisits
+```
+- Python 3.11+  
+- Node.js 18+  
+- pip installed
+```
+
+2. Clone repo
 ```
 git clone https://github.com/asakohayase/daytona-sales-analyzer.git
 cd daytona-sales-analyzer
 ```
 
-2. Install frontend dependencies
+3. Install frontend dependencies
 ```
 cd frontend
 npm install
 ```
 
-3. Add environment variables (.env)
+4. Add environment variables (.env)
 ```
 // frontend/.env
 OPENAI_API_KEY=your-openai-key
