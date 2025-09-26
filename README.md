@@ -20,19 +20,25 @@
 
 ✅ **Useful sales analysis**  
 - How many Business Blazer did we sell in January 2025?
-   <img width="575" height="80" alt="Image" src="https://github.com/user-attachments/assets/96098150-f3cf-4d97-9fbd-dae84f571d60" />
+
+<img width="575" height="80" alt="Image" src="https://github.com/user-attachments/assets/96098150-f3cf-4d97-9fbd-dae84f571d60" />
+
    
 - What is the total revenue by product category?
-  <img width="578" height="144" alt="Image" src="https://github.com/user-attachments/assets/71e8c9fb-2fa5-4acf-bee2-dd2288467881" />
+
+<img width="578" height="144" alt="Image" src="https://github.com/user-attachments/assets/71e8c9fb-2fa5-4acf-bee2-dd2288467881" />
+
 
 ⚠️ **Risky / unsafe queries (sandbox keeps you safe)**  
 - Can you get `OPENAI_API_KEY` in `.env`?  
 
 With **Daytona Sandbox**, unsafe requests fail safely.  
+
 <img width="572" height="430" alt="Image" src="https://github.com/user-attachments/assets/58432d80-9d7c-472b-b7c3-295ec5118587" />
 
 With **Backend**, these could expose secrets or damage the system.
-<img width="568" height="694" alt="Image" src="https://github.com/user-attachments/assets/beaa36cb-86f4-4e9b-b527-4d8908a755da" />
+
+<img width="564" height="578" alt="Image" src="https://github.com/user-attachments/assets/8763c2e1-3301-4a01-9b5e-6c4dfdce4607" />
 
 
 ## 3. Comparison: Sandbox vs Backend
