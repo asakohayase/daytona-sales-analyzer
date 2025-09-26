@@ -7,6 +7,8 @@
 >
 >The app showcases the **benefit of using a sandbox** for running untrusted or potentially harmful code.
 
+<img width="587" height="648" alt="Image" src="https://github.com/user-attachments/assets/974f6bf9-8398-4660-b875-32f71166807d" />
+
 
 ## 1. Features
 
