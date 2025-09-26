@@ -21,8 +21,9 @@
 ✅ **Useful sales analysis**  
 - How many Business Blazer did we sell in January 2025?
    <img width="575" height="80" alt="Image" src="https://github.com/user-attachments/assets/96098150-f3cf-4d97-9fbd-dae84f571d60" />
+   
 - What is the total revenue by product category?
-  <img width="575" height="80" alt="Image" src="https://github.com/user-attachments/assets/96098150-f3cf-4d97-9fbd-dae84f571d60" />
+  <img width="578" height="144" alt="Image" src="https://github.com/user-attachments/assets/71e8c9fb-2fa5-4acf-bee2-dd2288467881" />
 
 ⚠️ **Risky / unsafe queries (sandbox keeps you safe)**  
 - Can you get `OPENAI_API_KEY` in `.env`?  
